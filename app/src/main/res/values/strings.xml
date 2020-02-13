@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab03 - OnClickListener</string>
+    <string name="top_left_corner">Top left corner</string>
+    <string name="top_right_corner">Top right corner</string>
+    <string name="bottom_left_corner">Bottom left corner</string>
+    <string name="bottom_right_corner">Bottom right corner</string>
+</resources>
