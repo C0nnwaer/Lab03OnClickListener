@@ -19,26 +19,33 @@ public class MainActivity extends AppCompatActivity {
 
     public void cornerClick(View view){
         Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
+        CharSequence text;
         int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast toast;
 
         switch(view.getId()){
             case R.id.top_left:
                 Log.i("cornerClick","top left corner clicked");
+                text = "Top left";
+                toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.top_right:
                 Log.i("cornerClick","top right corner clicked");
+                text = "Top right";
+                toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.bottom_left:
                 Log.i("cornerClick","bottom left corner clicked");
+                text = "Bottom left";
+                toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.bottom_right:
                 Log.i("cornerClick","bottom right corner clicked");
+                text = "Bottom right";
+                toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
         }
