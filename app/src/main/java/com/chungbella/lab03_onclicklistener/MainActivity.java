@@ -17,36 +17,50 @@ public class MainActivity extends AppCompatActivity {
     TextView bottom_left;
     TextView bottom_right;
     SharedPreferences myPreferences;
+    SharedPreferences.Editor prefsEditor;
 
 
     public void cornerClick(View view){
         Context context = getApplicationContext();
         CharSequence text;
         int duration = Toast.LENGTH_SHORT;
+        int clicks;
         Toast toast;
 
         switch(view.getId()){
             case R.id.top_left:
                 Log.i("cornerClick","top left corner clicked");
-                text = "Top left";
+                clicks = myPreferences.getInt("top_left", -1);
+                prefsEditor.putInt("top_left", clicks + 1);
+                prefsEditor.apply();
+                text = "Top left\nClicks: " + clicks;
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.top_right:
                 Log.i("cornerClick","top right corner clicked");
-                text = "Top right";
+                clicks = myPreferences.getInt("top_right", -1);
+                prefsEditor.putInt("top_right", clicks + 1);
+                prefsEditor.apply();
+                text = "Top right\nClicks: " + clicks;
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.bottom_left:
                 Log.i("cornerClick","bottom left corner clicked");
-                text = "Bottom left";
+                clicks = myPreferences.getInt("bottom_left", -1);
+                prefsEditor.putInt("bottom_left", clicks + 1);
+                prefsEditor.apply();
+                text = "Bottom left\nClicks: " + clicks;
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.bottom_right:
                 Log.i("cornerClick","bottom right corner clicked");
-                text = "Bottom right";
+                clicks = myPreferences.getInt("bottom_right", -1);
+                prefsEditor.putInt("bottom_right", clicks + 1);
+                prefsEditor.apply();
+                text = "Bottom right\nClicks: " + clicks;
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
@@ -66,11 +80,20 @@ public class MainActivity extends AppCompatActivity {
         myPreferences = getSharedPreferences("com.chungbella.lab03_onclicklistener.sharedprefs",
                 MODE_PRIVATE);
 
-        SharedPreferences.Editor prefsEditor = myPreferences.edit();
-        prefsEditor.putInt("top_left", 0);
-        prefsEditor.putInt("top_right", 0);
-        prefsEditor.putInt("bottom_left", 0);
-        prefsEditor.putInt("bottom_right", 0);
+        prefsEditor = myPreferences.edit();
+        if(!myPreferences.contains("top_left")){
+            prefsEditor.putInt("top_left", 0);
+        }
+        if(!myPreferences.contains("top_right")){
+            prefsEditor.putInt("top_right", 0);
+        }
+        if(!myPreferences.contains("bottom_left")){
+            prefsEditor.putInt("bottom_left", 0);
+        }
+        if(!myPreferences.contains("bottom_right")){
+            prefsEditor.putInt("bottom_right", 0);
+        }
+        prefsEditor.apply();
     }
 
 }
