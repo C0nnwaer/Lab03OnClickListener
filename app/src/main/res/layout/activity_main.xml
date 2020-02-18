@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/top_left"
+        android:text="@string/top_left_str"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/colorAccent"
@@ -17,6 +18,7 @@
 
     <TextView
         android:id="@+id/top_right"
+        android:text="@string/top_right_str"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/colorAccent"
@@ -24,9 +26,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintTop_toBottomOf="@+id/top_left"
+        app:layout_constraintBottom_toTopOf="@id/bottom_right"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <TextView
         android:id="@+id/bottom_left"
+        android:text="@string/bottom_left_str"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/colorAccent"
@@ -36,6 +48,7 @@
 
     <TextView
         android:id="@+id/bottom_right"
+        android:text="@string/bottom_right_str"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/colorAccent"

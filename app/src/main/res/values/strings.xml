@@ -4,4 +4,8 @@
     <string name="top_right_corner">Top right corner</string>
     <string name="bottom_left_corner">Bottom left corner</string>
     <string name="bottom_right_corner">Bottom right corner</string>
+    <string name="top_left_str">Top Left</string>
+    <string name="top_right_str">Top Right</string>
+    <string name="bottom_left_str">Bottom Left</string>
+    <string name="bottom_right_str">Bottom Right</string>
 </resources>

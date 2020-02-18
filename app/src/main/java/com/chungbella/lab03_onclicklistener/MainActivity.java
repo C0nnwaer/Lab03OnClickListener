@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.SeekBar;
 import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView bottom_right;
     SharedPreferences myPreferences;
     SharedPreferences.Editor prefsEditor;
+    SeekBar seekBar;
 
 
     public void cornerClick(View view){
@@ -94,6 +96,27 @@ public class MainActivity extends AppCompatActivity {
             prefsEditor.putInt("bottom_right", 0);
         }
         prefsEditor.apply();
+
+        seekBar = findViewById(R.id.seek_bar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                top_left.setTextSize(progress);
+                top_right.setTextSize(progress);
+                bottom_left.setTextSize(progress);
+                bottom_right.setTextSize(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
 }
