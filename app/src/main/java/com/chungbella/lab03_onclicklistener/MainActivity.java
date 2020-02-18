@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView top_right;
     TextView bottom_left;
     TextView bottom_right;
+    SharedPreferences myPreferences;
 
 
     public void cornerClick(View view){
@@ -61,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
         bottom_left = findViewById(R.id.bottom_left);
         bottom_right = findViewById(R.id.bottom_right);
 
+        myPreferences = getSharedPreferences("com.chungbella.lab03_onclicklistener.sharedprefs",
+                MODE_PRIVATE);
 
+        SharedPreferences.Editor prefsEditor = myPreferences.edit();
+        prefsEditor.putInt("top_left", 0);
+        prefsEditor.putInt("top_right", 0);
+        prefsEditor.putInt("bottom_left", 0);
+        prefsEditor.putInt("bottom_right", 0);
     }
 
 }
